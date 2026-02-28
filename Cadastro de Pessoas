@@ -1,0 +1,27 @@
+create database cadastro
+default character set utf8mb4
+default collate utf8mb4_general_ci;
+
+use cadastro; 
+
+create table pessoas(
+    id int NOT NULL auto_increment,
+    nome varchar(30) NOT NULL,
+    nascimento date,
+    sexo enum('M', 'F'),
+    peso decimal(5,2),
+    altura decimal(3,2),
+    nacionalidade varchar(20) default 'Brasil',
+    primary key(id)
+) default charset = utf8mb4;
+
+INSERT INTO pessoas (nome, nascimento, sexo, peso, altura, nacionalidade) values
+
+('Lucas', '1997-02-11', 'M', '85.12', '1.70', 'Portugal'),
+('Sophia', '2011-08-21', 'F', '62.80', '1.60', 'Islandia'),
+('Matheus', '2007-01-22', 'M', '66.50', '1.80', default);
+
+select * from pessoas;
+
+
+
